@@ -16,12 +16,14 @@ public class AppointmentController {
     }
 
     @GetMapping("/appointment/{confirmationNumber}/{email}")
-    public Appointment getAppointmentConfirmation(@PathVariable("confirmationNumber") String confirmationNumber, @PathVariable("email") String email) {
+    public Appointment getAppointmentConfirmation(@PathVariable("confirmationNumber") String confirmationNumber,
+                                                  @PathVariable("email") String email) {
         return appointmentRepository.getAppointmentConfirmation(confirmationNumber, email);
     }
 
     @DeleteMapping("/appointment/{confirmationNumber}/{email}")
-    public String deleteAppointment(@PathVariable("confirmationNumber") String confirmationNumber, @PathVariable("email") String email) {
+    public String deleteAppointment(@PathVariable("confirmationNumber") String confirmationNumber,
+                                    @PathVariable("email") String email) {
         return appointmentRepository.delete(confirmationNumber, email);
     }
 
